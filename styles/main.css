@@ -1,0 +1,28 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#container2 {
+  max-width: 1280px; /* keep */
+  margin: auto; /* keep */
+  display: grid; /* keep */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+      "bobwhitePic bobwhiteText"
+      "loggerheadText loggerheadPic"
+      "kestrelPic kestrelText"
+      "nighthawkText nighthawkPic"
+      "owlPic owlText";
+}
+
+.caption {
+  max-width: 600px;
+}
+
+.picture {
+  max-width: 600px;
+}
