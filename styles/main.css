@@ -19,6 +19,13 @@
       "owlPic owlText";
 }
 
+#mapid {
+  height: 500px;
+  width: 600px;
+  margin: 1em;
+  border: 1px solid #999;
+}
+
 .caption {
   max-width: 600px;
 }
