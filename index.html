@@ -2,81 +2,179 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Declining Bird Populations in Alachua County</title>
+	<link href="styles/leaflet.css" rel="stylesheet">
 	<link rel="stylesheet" href="styles/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <div id="container"> <!-- start of container -->
-</header>
 
 <header>
-	<h1>Something About Birds</h1>
 
-	<p>Something more about birds, but smaller.</p>
+	<h1 id="title">Bird Loss in Alachua County</h1>
 
-<!-- maybe put a picture here??
-	<img src="images/typography_line_terms.svg" alt="Diagram showing typography terms"> -->
 </header>
 
-		<p>Some sort of introduction.Example text: Birds, also known as Aves or avian dinosaurs, are a group of endothermic vertebrates, characterised by feathers, toothless beaked jaws, the laying of hard-shelled eggs, a high metabolic rate, a four-chambered heart, and a strong yet lightweight skeleton. Birds live worldwide and range in size from the 5 cm (2 in) bee hummingbird to the 2.75 m (9 ft) ostrich. They rank as the world's most numerically successful class of tetrapods, with approximately ten thousand living species,[3] more than half of these being passerine, or "perching" birds. Birds have wings whose development varies according to species; the only known groups without wings are the extinct moa and elephant birds. Wings, which evolved from forelimbs, gave birds the ability to fly, although further evolution has led to the loss of flight in some birds, including ratites, penguins, and diverse endemic island species of birds. The digestive and respiratory systems of birds are also uniquely adapted for flight. Some bird species of aquatic environments, particularly seabirds and some waterbirds, have further evolved for swimming.</p>
+<p class="info">You probably see birds every day and probably don't think much about it. But did you know that bird populations are slowly decreasing across the continent?</p>
 
-		<p>The fossil record demonstrates that birds are modern feathered dinosaurs, having evolved from earlier feathered dinosaurs within the theropod group, which are traditionally placed within the saurischian dinosaurs. The closest living relatives of birds are the crocodilians. Primitive bird-like dinosaurs that lie outside class Aves proper, in the broader group Avialae, have been found dating back to the mid-Jurassic period, around 170 million years ago. Many of these early "stem-birds", such as Archaeopteryx, retained primitive characteristics such as teeth and long bony tails. DNA-based evidence finds that birds diversified dramatically around the time of the Cretaceous–Palaeogene extinction event 66 million years ago, which killed off the pterosaurs and all the non-avian dinosaur lineages. But birds, especially those in the southern continents, survived this event and then migrated to other parts of the world while diversifying during periods of global cooling. This makes them the sole surviving dinosaurs according to cladistics.</p>
+<p class="info">In September, the Cornell Lab of Ornithology released the first widespread analysis of bird population changes across the U.S. and Canada (Source: <a href="https://www.birds.cornell.edu/home/bring-birds-back">Cornell Lab of Ornithology</a>). They found a nearly 3 billion deficit in bird population numbers since 1970 (Source: <a href="https://www.birds.cornell.edu/home/bring-birds-back">Cornell Lab of Ornithology</a>).</p>
+
+<p class="info">Rex Rowan, a 45-year bird watcher and long-time member of the <a href="http://www.alachuaaudubon.org">Alachua Audubon Society</a>, said that Alachua County is not immune to this decline. He could list several bird species he has seen local declines in, including the northern bobwhite, the loggerhead shrike, the American kestrel, the common nighthawk and the burrowing owl.</p>
+
+<div id="chart"></div>
+
+<p class="chartCaption">The chart above was compiled from data from the Christmas Bird Counts in Gainesville from 1992-95 (Source: <a href="http://www.alachuaaudubon.org/local-birding-info/bird-counts/xmas/">Alachua Audubon Society CBC</a>). This was the greatest span of local data found on its website. There was no data about the common nighthawk and the burrowing owl.</p>
+
+<p class="info">Alachua County is a hub of ornithology because of its various protected lands. The county's many avid bird watchers can submit their findings on a popular bird database called <a href="https://ebird.org/subnational2/US-FL-001?yr=all">eBird</a>. The top eight separate locations pinned on the map below are the top eight <em>separate</em> birding locations as reported on the eBird database (Source:<a href="https://ebird.org/region/US-FL-001/hotspots?yr=all&m=">eBird Alachua County Hotspots</a>. Click on each pin to see the number of bird species reported there.</p>
   <!-- maybe put a picture here?? <img src="images/ArialMTsp.svg" alt="Arial typeface"> -->
 
-<!-- maybe put the map here?? <img src="images/ArialMTsp.svg" alt="Arial typeface"> -->
+<div id="mapid"></div>
 
-	<p>Delve deeper into the topic here.</p>
-  <!-- maybe put a chart here?? <img src="images/ArialMTsp.svg" alt="Arial typeface"> -->
+<h2 id="subhead">Deep Dive: The At-Risk Birds in Alachua County</h2>
 
-<h2>Alachua County's At-Risk Bird Species</h2>
+<p class="info">Click on the picture of each bird to reveal some facts about them! This information was gathered from the Cornell Lab of Ornithology's <a href="https://www.allaboutbirds.org/news/">All About Birds website</a>.</p>
 
 <div id="container2"><!-- start of container2 -->
 
-<div id="bobwhitePic">
-		<img src="images/bobwhite.jpg" alt="Bobwhite" class="picture">
-		<p class="caption">Image source: <a href="https://commons.wikimedia.org/wiki/File:Northern_Bobwhite_female_RWD.jpg">DickDaniels (http://carolinabirds.org/) [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)]</a>.</p>
-</div>
+	<div id="bobwhite" class="picture">
+			<img src="images/bobwhite.jpg" alt="Bobwhite" id="bobwhitePic">
+			<p class="caption">Image source: <a href="https://commons.wikimedia.org/wiki/File:Northern_Bobwhite_female_RWD.jpg">DickDaniels (http://carolinabirds.org/) [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)]</a>.</p>
+	</div>
 
-<p id="bobwhiteText"> Talk about Bobwhites here. (Source GIVE ONE: <a href="https://www.smashingmagazine.com/2010/11/best-practices-of-combining-typefaces/">Smashing Magazine</a>)</p>
+	<div id="bobwhiteText" class="descrip">
+		<h3 class="birdTitle">Northern Bobwhite</h3>
+		<p class="source">(Source: <a href="https://www.allaboutbirds.org/guide/Northern_Bobwhite">All About Birds Northern Bobwhite Overview</a>)
 
-<p id="loggerheadText"> Stuff about Loggerhead birds here. (Source GIVE ONE: <a href="http://alistapart.com/article/how-we-read">A List Apart</a>)</p>
+		<p>Habitat: grasslands</p>
+		<p>Food: plants</p>
+		<p>Nesting: ground</p>
+		<p>Behavior:	ground forager</p>
+		<p>Conservation: common bird in steep decline</p>
 
-<div id="loggerheadPic">
-		<img src="images/loggerhead.jpg" alt="Loggerhead" class="picture">
-		<p class="caption">Image source: <a href="https://commons.wikimedia.org/wiki/File:Loggerhead_Shrike_florida_RWD6.jpg">DickDaniels (http://carolinabirds.org/) [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)]</a></p>
-</div>
+		<audio controls preload="auto">
+		      	<source src="audio/bobwhite.mp3" type="audio/mp3">
+		      	<source src="audio/bobwhite.ogg" type="audio/ogg">
+	 	</audio>
 
-<div id="kestrelPic">
-	<img src="images/kestrel.jpg" alt="Kestrel" class="picture">
-	<p class="caption">Image by Vectorised by Froztbyte. Public domain. Source CHANGE EVERYTHING: <a href="https://commons.wikimedia.org/wiki/File:American_kestrel_(Falco_sparverius_sparveroides)_female_white_morph.JPG">Charles J Sharp [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)]</a></p>
-</div>
+		<p class="source">Audio source: John A. Trent, XC202972. Accessible at <a href='https://www.xeno-canto.org/202972'>www.xeno-canto.org/202972</a>.</p>
 
-<p id="kestrelText">More things about Kestrels. (Source GIVE ONE HERE: <a href="https://baymard.com/blog/line-length-readability">Baymard Institute</a>)</p>
+	</div>
 
-<p id="nighthawkText">More things about Nighthawks. (Source GIVE ONE HERE: <a href="https://baymard.com/blog/line-length-readability">Baymard Institute</a>)</p>
+	<div id="loggerheadText" class="descrip">
 
-<div id="nighthawkPic">
-	<img src="images/nighthawk.jpg" alt="Nighthawks" class="picture">
-	<p class="caption">Image source: <a href="https://commons.wikimedia.org/wiki/File:Common_Nighthawk_(14428313550).jpg">Andy Reago &amp; Chrissy McClarren [CC BY 2.0 (https://creativecommons.org/licenses/by/2.0)]</a></p>
-</div>
+		<h3 class="birdTitle">Loggerhead Shrike</h3>
+		<p class="source">(Source: <a href="https://www.allaboutbirds.org/guide/Loggerhead_Shrike">All About Birds Loggerhead Shrike Overview</a>)
 
-<div id="owlPic">
-		<img src="images/owl.jpg" alt="Owls" class="picture">
-		<p class="caption">Image source: <a href="https://commons.wikimedia.org/wiki/File:Burrowing_Owl_Florida.jpg">http://www.birdphotos.com [CC BY 3.0 (https://creativecommons.org/licenses/by/3.0)]</a></p>
-</div>
+		<p>Habitat: open woodlands</p>
+		<p>Food: insects</p>
+		<p>Nesting: tree</p>
+		<p>Behavior:	aerial dive</p>
+		<p>Conservation: common bird in steep decline</p>
 
-<p id="owlText">More things about owls. (Source GIVE ONE HERE: <a href="https://baymard.com/blog/line-length-readability">Baymard Institute</a>)</p>
+		<audio controls preload="auto">
+		      	<source src="audio/loggerhead.mp3" type="audio/mp3">
+		      	<source src="audio/loggerhead.ogg" type="audio/ogg">
+	 	</audio>
+
+		<p>Audio source: Richard E. Webster, XC255302. Accessible at <a href='https://www.xeno-canto.org/255302'>www.xeno-canto.org/255302</a>.</p>
+	</div>
+
+	<div id="loggerhead" class="picture">
+			<img src="images/loggerhead.jpg" alt="Loggerhead" id="loggerheadPic">
+			<p class="caption">Image source: <a href="https://commons.wikimedia.org/wiki/File:Loggerhead_Shrike_florida_RWD6.jpg">DickDaniels (http://carolinabirds.org/) [CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0)]</a></p>
+	</div>
+
+	<div id="kestrel" class="picture">
+		<img src="images/kestrel.jpg" alt="Kestrel" id="kestrelPic">
+		<p class="caption">Image source: <a href="https://commons.wikimedia.org/wiki/File:American_kestrel_(Falco_sparverius_sparveroides)_female_white_morph.JPG">Charles J Sharp [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)]</a></p>
+	</div>
+
+	<div id="kestrelText" class="descrip">
+
+		<h3 class="birdTitle">American Kestrel</h3>
+		<p class="source">(Source: <a href="https://www.allaboutbirds.org/guide/american_kestrel">All About Birds American Kestral Overview</a>)
+
+		<p>Habitat: grasslands</p>
+		<p>Food: small animals</p>
+		<p>Nesting: cavity</p>
+		<p>Behavior:	aerial dive</p>
+		<p>Conservation: low concern</p>
+
+		<audio controls preload="auto">
+		      	<source src="audio/kestrel.mp3" type="audio/mp3">
+		      	<source src="audio/kestrel.ogg" type="audio/ogg">
+	 	</audio>
+
+		<p>Audio source: Matthias Feuersenger, XC253328. Accessible at <a href='https://www.xeno-canto.org/253328'>www.xeno-canto.org/253328</a>.</p>
+
+	</div>
+
+	<div id="nighthawkText" class="descrip">
+
+		<h3 class="birdTitle">Common Nighthawk</h3>
+		<p class="source">(Source: <a href="https://www.allaboutbirds.org/guide/common_nighthawk">All About Birds Common Nighthawk Overview</a>)
+
+		<p>Habitat: grasslands</p>
+		<p>Food: insects</p>
+		<p>Nesting: ground</p>
+		<p>Behavior:	aerial forager</p>
+		<p>Conservation: common bird in steep decline</p>
+
+		<audio controls preload="auto">
+						<source src="audio/nighthawk.mp3" type="audio/mp3">
+						<source src="audio/nighthawk.ogg" type="audio/ogg">
+		</audio>
+
+		<p>Audio source: James Bradley, XC333896. <a href='https://www.xeno-canto.org/333896'>Accessible at www.xeno-canto.org/333896</a>.</p>
+	</div>
+
+	<div id="nighthawk" class="picture">
+		<img src="images/nighthawk.jpg" alt="Nighthawks" id="nighthawkPic">
+		<p class="caption">Image source: <a href="https://commons.wikimedia.org/wiki/File:Common_Nighthawk_(14428313550).jpg">Andy Reago &amp; Chrissy McClarren [CC BY 2.0 (https://creativecommons.org/licenses/by/2.0)]</a></p>
+	</div>
+
+	<div id="owl" class="picture">
+			<img src="images/owl.jpg" alt="Owls" id="owlPic">
+			<p class="caption">Image source: <a href="https://commons.wikimedia.org/wiki/File:Burrowing_Owl_Florida.jpg">http://www.birdphotos.com [CC BY 3.0 (https://creativecommons.org/licenses/by/3.0)]</a></p>
+	</div>
+
+	<div id="owlText" class="descrip">
+
+		<h3 class="birdTitle">Burrowing Owl</h3>
+		<p class="source">(Source: <a href="https://www.allaboutbirds.org/guide/burrowing_owl">All About Birds Burrowing Owl Overview</a>)
+
+		<p>Habitat: grasslands</p>
+		<p>Food: small animals</p>
+		<p>Nesting: burrow</p>
+		<p>Behavior:	ground forager</p>
+		<p>Conservation: low concern</p>
+
+		<audio controls preload="auto">
+						<source src="audio/owl.mp3" type="audio/mp3">
+						<source src="audio/owl.ogg" type="audio/ogg">
+		</audio>
+
+		<p>Audio source: Ross Gallardy, XC296318. Accessible at <a href='https://www.xeno-canto.org/296318'>www.xeno-canto.org/296318</a>.</p>
+
+	</div>
 
 </div><!-- end of container2 -->
 
 <footer>
-	<p>PUT SOME FOOTER HERE.</p>
+	<p>Information from this webpage is based off of the <a href="https://www.wuft.org/news/2019/10/14/alachua-county-reacts-to-declining-bird-numbers-in-u-s-and-canada/">WUFT News article, "Alachua County Reacts To Declining Bird Numbers In U.S. And Canada,"</a> which was written by me, Brittney Miller.</p>
 </footer>
 
 </div> <!-- end of container -->
+
+<script src="js/leaflet.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
 
 <script src="js/scripts.js"></script>
 
