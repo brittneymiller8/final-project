@@ -157,10 +157,15 @@ footer {
     width: 100%;
     padding: 0;
     margin: 15px 0;
+    height: 300px;
   }
 
-  .descrip, img, .caption, .info {
+  .descrip, .picture, .info {
     width: 325px;
     padding: 10px;
+  }
+
+  .caption {
+    margin: 0;
   }
   }
