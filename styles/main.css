@@ -123,6 +123,16 @@ footer {
   margin: 20px;
   padding: 10px;
 }
+
+a {
+    color: #D94FFF; /* keep */
+}
+
+a:hover {
+    color: #f4cdb7; /* keep */
+    text-decoration: none; /* keep */
+}
+
 @media screen and (max-width: 600px) {
   #container {
     padding: 0px;
